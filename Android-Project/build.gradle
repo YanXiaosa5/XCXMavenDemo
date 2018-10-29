@@ -20,7 +20,8 @@ allprojects {
         google()
         jcenter()
         maven{
-            url 'file:///F:/fanhua-project-android/library'
+//            url 'file:///F:/fanhua-project-android/library'//本地依赖
+             url 'https://raw.githubusercontent.com/YanXiaosa5/XCXMavenDemo/master'
         }
     }
 }
