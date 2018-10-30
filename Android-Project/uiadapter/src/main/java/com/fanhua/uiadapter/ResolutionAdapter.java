@@ -291,6 +291,7 @@ public class ResolutionAdapter implements IResolutionAdapter {
     public void setTextSize(TextView view, float size) {
         size = size / 2;
         view.setTextSize(TypedValue.COMPLEX_UNIT_PX, Math.round(size * curResolution.getDensity()));
+        System.out.println(Math.round(size * curResolution.getDensity())+"尺寸"+curResolution.getDensity());
     }
 
     @Override

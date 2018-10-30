@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.google.gson.Gson;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,11 @@ public class Main2Activity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected boolean isAutoAdapter() {
+        return true;
     }
 
     @Override

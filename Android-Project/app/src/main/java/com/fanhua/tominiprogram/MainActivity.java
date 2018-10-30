@@ -6,7 +6,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.fanhua.uiadapter.enums.ViewScaleType;
 import com.google.gson.Gson;
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
@@ -14,10 +18,13 @@ import com.tencent.mm.opensdk.modelmsg.WXTextObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 打开第三方小程序
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
         final IWXAPI api = WXAPIFactory.createWXAPI(MainActivity.this, appId);
         api.registerApp(appId);
 
-        findViewById(R.id.tv_open).setOnClickListener(new View.OnClickListener() {
+        TextView viewById = findViewById(R.id.tv_open);
+        ListView lv_list = findViewById(R.id.lv_list);
+        viewById.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
@@ -41,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+
+        resolutionAdapter.setTextSize(viewById,28);
+
+        List<String> data = new ArrayList<>();
+
+        for (int i = 0; i < 20; i++) {
+            data.add("这是第"+i+"条数据");
+        }
+
+        lv_list.setAdapter(new MyAdapter(data,this));
+
     }
 
     @Override

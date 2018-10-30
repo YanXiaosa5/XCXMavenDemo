@@ -9,7 +9,7 @@
     <Button
         android:id="@+id/btn_result"
         android:text="返回"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="40dp" />
 
 </RelativeLayout>

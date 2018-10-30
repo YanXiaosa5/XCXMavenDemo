@@ -30,6 +30,7 @@ public abstract class LibApplication extends Application implements IResolutionL
         super.onCreate();
         initResolutionAdapter();
         self = this;
+        System.out.println(ScreenUtils.getScreenWidth(this)+"--->"+ScreenUtils.getScreenHeight(this)+"--->"+ScreenUtils.getScreenDensity(this)+"--->"+ScreenUtils.getScreenDensityDpi(this));
     }
 
     public ACache getCache() {
@@ -62,6 +63,7 @@ public abstract class LibApplication extends Application implements IResolutionL
                 Resolution resolution = designResolutionForApp();
                 if (null == resolution) {
                     resolution = new Resolution(750, 1334, 1.0f, 160, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//
                 }
                 resolutionAdapter.setDesignResolution(this, resolution);
             }
