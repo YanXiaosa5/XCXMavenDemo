@@ -44,15 +44,7 @@ public class MainActivity extends BaseActivity {
 //        resolutionAdapter.setTextSize(viewById, 28);
 
         //view适配
-        resolutionAdapter.setup(viewById,500,120,ViewScaleType.AS_TWO_EDGES_SCALE);
-
-        List<String> data = new ArrayList<>();
-
-        for (int i = 0; i < 20; i++) {
-            data.add("这是第" + i + "条数据");
-        }
-        //adapter中的字体大小和view高度是配
-        lv_list.setAdapter(new MyAdapter(data, this));
+//        resolutionAdapter.setup(viewById,500,120,ViewScaleType.AS_TWO_EDGES_SCALE);
 
     }
 
