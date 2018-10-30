@@ -28,7 +28,6 @@ public class MainActivity extends BaseActivity {
         api.registerApp(appId);
 
         TextView viewById = findViewById(R.id.tv_open);
-        ListView lv_list = findViewById(R.id.lv_list);
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
