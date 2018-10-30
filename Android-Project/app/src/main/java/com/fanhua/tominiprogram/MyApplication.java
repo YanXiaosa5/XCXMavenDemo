@@ -5,9 +5,15 @@ import android.content.pm.ActivityInfo;
 
 import com.fanhua.uiadapter.LibApplication;
 import com.fanhua.uiadapter.Resolution;
-import com.fanhua.uiadapter.ScreenUtils;
+import com.fanhua.uiadapter.http.HttpClient;
 
 public class MyApplication extends LibApplication {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        HttpClient.setBaseUrl("http://47.105.63.217");
+    }
 
     @Override
     public Resolution designResolutionForApp() {

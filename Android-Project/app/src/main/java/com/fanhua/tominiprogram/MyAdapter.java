@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.fanhua.uiadapter.LibApplication;
 import com.fanhua.uiadapter.ResolutionAdapter;
+import com.fanhua.uiadapter.ScreenUtils;
 import com.fanhua.uiadapter.enums.ViewScaleType;
 
 import java.util.List;
@@ -52,6 +53,7 @@ public class MyAdapter extends BaseAdapter {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         convertView.setLayoutParams(layoutParams);
         resolutionAdapter.setTextSize(tv_content,28);
+        resolutionAdapter.setup(tv_content, ScreenUtils.getScreenWidth(context),120,ViewScaleType.AS_HEIGHT_EDGES_SCALE);
         return convertView;
     }
 

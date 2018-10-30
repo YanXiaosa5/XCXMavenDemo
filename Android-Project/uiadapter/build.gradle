@@ -27,6 +27,15 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    /*rotrofit*/
+    implementation 'com.squareup.okhttp3:okhttp:3.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+
+    /*rx-android-java*/
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    implementation 'com.trello:rxlifecycle:1.0'
+    implementation 'com.trello:rxlifecycle-components:1.0'
 }
 uploadArchives {
     repositories.mavenDeployer {
@@ -34,6 +43,6 @@ uploadArchives {
         repository(url: "file:///F:/fanhua-project-android/library")
         pom.groupId = "com.fanhua.uiadapter"
         pom.artifactId = "uiadapter"
-        pom.version = "1.0.0"
+        pom.version = "1.0.1"
     }
 }
