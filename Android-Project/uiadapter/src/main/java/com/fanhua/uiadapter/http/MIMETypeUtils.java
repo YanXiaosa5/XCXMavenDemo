@@ -3,7 +3,7 @@ package com.fanhua.uiadapter.http;
 import java.io.File;
 
 /**
- * Created by misl on 2017/3/30.
+ * Created by yxs on 2017/3/30.
  */
 
 public class MIMETypeUtils {

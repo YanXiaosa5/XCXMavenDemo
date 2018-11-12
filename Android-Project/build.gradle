@@ -24,6 +24,11 @@ allprojects {
              url 'https://raw.githubusercontent.com/YanXiaosa5/XCXMavenDemo/master'//远程依赖
         }
     }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
 }
 
 task clean(type: Delete) {

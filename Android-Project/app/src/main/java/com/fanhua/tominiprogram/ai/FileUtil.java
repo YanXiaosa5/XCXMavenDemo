@@ -17,7 +17,7 @@ public class FileUtil {
         } 
 
         if (file.length() > 1024 * 1024 * 1024) {
-            throw new IOException("File is too large");
+            throw new IOException("File's length is too large");
         } 
 
         StringBuilder sb = new StringBuilder((int) (file.length()));
@@ -54,15 +54,15 @@ public class FileUtil {
                     bos.write(buffer, 0, len1);
                 }
 
-                byte[] var7 = bos.toByteArray();
-                return var7;
+                byte[] result = bos.toByteArray();
+                return result;
             } finally {
                 try {
                     if (in != null) {
                         in.close();
                     }
-                } catch (IOException var14) {
-                    var14.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
                 bos.close();

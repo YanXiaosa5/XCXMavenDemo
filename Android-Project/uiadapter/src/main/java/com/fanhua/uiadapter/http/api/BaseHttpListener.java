@@ -4,7 +4,7 @@ package com.fanhua.uiadapter.http.api;
 import com.fanhua.uiadapter.http.BaseInterceptor;
 
 /**
- * Created by misl on 2017/3/31.
+ * Created by yxs on 2017/3/31.
  */
 
 public interface BaseHttpListener {

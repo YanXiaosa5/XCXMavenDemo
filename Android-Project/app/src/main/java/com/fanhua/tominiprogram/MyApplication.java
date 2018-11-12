@@ -18,6 +18,5 @@ public class MyApplication extends LibApplication {
     @Override
     public Resolution designResolutionForApp() {
         return new Resolution(750, 1334, 1.0F, 160, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-//        return new Resolution(ScreenUtils.getScreenWidth(this), ScreenUtils.getScreenHeight(this), ScreenUtils.getScreenDensity(this), ScreenUtils.getScreenDensityDpi(this), ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 }

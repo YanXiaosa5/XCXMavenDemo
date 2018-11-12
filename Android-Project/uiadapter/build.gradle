@@ -43,6 +43,6 @@ uploadArchives {
         repository(url: "file:///F:/fanhua-project-android/library")
         pom.groupId = "com.fanhua.uiadapter"
         pom.artifactId = "uiadapter"
-        pom.version = "1.0.2"
+        pom.version = "1.0.3"
     }
 }

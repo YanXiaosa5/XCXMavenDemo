@@ -32,7 +32,7 @@ import rx.schedulers.Schedulers;
  * 网络请求库
  * get post upload multiupload
  * <p>
- * Created by misl on 2017/3/24.
+ * Created by yxs on 2017/3/24.
  */
 public class HttpClient {
 
