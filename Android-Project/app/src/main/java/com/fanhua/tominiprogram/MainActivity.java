@@ -35,25 +35,18 @@ public class MainActivity extends BaseActivity {
                 WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
                 req.userName = "gh_1fd06885a21d"; // 小程序原始id
                 req.path = "pages/ad/index?xsl_third_appid=wxe57bfaaa884daed6&xsl_third_path=%3Ffrom%3D1264";
-//                req.path = "pages/index/index?from=wxcps&tag=28jaO-hqda";
                 req.miniprogramType = WXLaunchMiniProgram.Req.MINIPTOGRAM_TYPE_RELEASE;// 可选打开 开发版，体验版和正式版
                 api.sendReq(req);
             }
         });
 
-        //适配textView的字体大小
+        //resolutionAdapter在baseActivity中已经初始化
+        //字体大小适配
 //        resolutionAdapter.setTextSize(viewById, 28);
 
         //view适配
 //        resolutionAdapter.setup(viewById,500,120,ViewScaleType.AS_TWO_EDGES_SCALE);
 
-        
-
-    }
-
-    @Override
-    protected boolean isAutoAdapter() {
-        return false;//返回true自动适配
     }
 
 }

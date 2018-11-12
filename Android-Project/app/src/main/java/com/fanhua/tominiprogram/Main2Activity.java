@@ -20,10 +20,13 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+/**
+ * 网络请求demo(加密请忽略),请确保在application中配置BaseUrl:  HttpClient.setBaseUrl("");
+ */
 public class Main2Activity extends BaseActivity{
 
     /**
-     * 主题内容
+     * 主体内容
      */
     private final static String ENCRYPTSTR = "encryptstr";
 
