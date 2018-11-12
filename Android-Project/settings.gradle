@@ -1,1 +1,1 @@
-include ':app', ':uiadapter'
+include ':app', ':uiadapter', ':uiannotation'

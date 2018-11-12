@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.fanhua.tominiprogram.ai.FaceAiDemo;
 import com.fanhua.uiadapter.enums.ViewScaleType;
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity {
                 WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
                 req.userName = "gh_1fd06885a21d"; // 小程序原始id
                 req.path = "pages/ad/index?xsl_third_appid=wxe57bfaaa884daed6&xsl_third_path=%3Ffrom%3D1264";
+//                req.path = "pages/index/index?from=wxcps&tag=28jaO-hqda";
                 req.miniprogramType = WXLaunchMiniProgram.Req.MINIPTOGRAM_TYPE_RELEASE;// 可选打开 开发版，体验版和正式版
                 api.sendReq(req);
             }
@@ -44,6 +46,8 @@ public class MainActivity extends BaseActivity {
 
         //view适配
 //        resolutionAdapter.setup(viewById,500,120,ViewScaleType.AS_TWO_EDGES_SCALE);
+
+        
 
     }
 

@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
-
 android {
     compileSdkVersion 28
 
 
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -27,22 +26,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    /*rotrofit*/
-    implementation 'com.squareup.okhttp3:okhttp:3.4.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
 
-    /*rx-android-java*/
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
-    implementation 'com.trello:rxlifecycle:1.0'
-    implementation 'com.trello:rxlifecycle-components:1.0'
 }
 uploadArchives {
     repositories.mavenDeployer {
         //Windows下地址： file:///<盘符>:/users/<username>/my/local/repo
         repository(url: "file:///F:/fanhua-project-android/library")
-        pom.groupId = "com.fanhua.uiadapter"
-        pom.artifactId = "uiadapter"
-        pom.version = "1.0.2"
+        pom.groupId = "com.fanhua.uinnotation"
+        pom.artifactId = "uinnotation"
+        pom.version = "1.0.0"
     }
 }

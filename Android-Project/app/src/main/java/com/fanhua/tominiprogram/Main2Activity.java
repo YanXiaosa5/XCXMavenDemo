@@ -1,6 +1,11 @@
 package com.fanhua.tominiprogram;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 
 import com.fanhua.tominiprogram.demo.encry.aes.AesException;
 import com.fanhua.tominiprogram.demo.encry.aes.EncryAndroid;
@@ -15,7 +20,7 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-public class Main2Activity extends BaseActivity {
+public class Main2Activity extends BaseActivity{
 
     /**
      * 主题内容
@@ -46,6 +51,7 @@ public class Main2Activity extends BaseActivity {
         params.put("appKey", "121bcdaadcc74a959c5402a1825ef74f");
         params.put("size", 10 + "");
         params.put("page", 1 + "");
+        params.put("channelId", "fangyuan46");
 
         try {
             String encryptstr = EncryAndroid.encrypt(GsonUtils.toJson(params));
@@ -59,7 +65,7 @@ public class Main2Activity extends BaseActivity {
             String sign = SignUtil.createSign(signMap, "7908b2179af04e1099877643ad7c83a2");
             signMap.put(SIGN, sign);
 
-            HttpClient.string("mj/api/ad/list/v2", GsonUtils.toJson(signMap), new BaseHttpListener() {
+            HttpClient.string("api/ad/list/v2", GsonUtils.toJson(signMap), new BaseHttpListener() {
                 @Override
                 public void onSucceed(String s, BaseInterceptor baseInterceptor, String s1) {
                     if(s != null){
@@ -92,6 +98,28 @@ public class Main2Activity extends BaseActivity {
             e.printStackTrace();
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermission();
+        }
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void requestPermission() {
+        //如果用户没有读取存储的权限,则提示
+        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            // 申请一个（或多个）权限，并提供用于回调返回的获取码（用户定义)
+            requestPermissions(new String[]{
+                    Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override

@@ -12,7 +12,7 @@ public class MyApplication extends LibApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        HttpClient.setBaseUrl("http://47.105.63.217");
+        HttpClient.setBaseUrl("http://10.0.0.124:8081/");
     }
 
     @Override
