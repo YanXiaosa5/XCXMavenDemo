@@ -14,7 +14,7 @@ import com.fanhua.uiadapter.utils.ViewUtils;
 
 
 /**
- * Created by misl on 2017/3/22.
+ * Created by yxs on 2017/3/22.
  */
 public class ResolutionAdapter implements IResolutionAdapter {
 

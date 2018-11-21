@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_webview"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_anim"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content">
+        <View
+            android:elevation="4dp"
+            android:id="@+id/view_hiden"
+            android:layout_gravity="center_horizontal"
+            android:background="#E43740"
+            android:layout_width="2dp"
+            android:layout_height="65dp"/>
+        <View
+            android:id="@+id/view_line"
+            android:elevation="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#E43740"
+            android:visibility="gone"
+            android:layout_width="2dp"
+            android:layout_height="80dp"/>
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:src="@mipmap/look"
+            android:layout_width="55dp"
+            android:layout_height="39dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -2,7 +2,7 @@ package com.fanhua.uiadapter.utils;
 
 /**
  * 常用单位转换的辅助类
- * Created by Misl on 2016/2/22.
+ * Created by yxs on 2016/2/22.
  */
 
 import android.content.Context;

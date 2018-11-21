@@ -2,7 +2,7 @@ package com.fanhua.uiadapter;
 
 /**
  * 获得屏幕相关的辅助类
- * Created by Misl on 2016/2/22.
+ * Created by yxs on 2016/2/22.
  */
 
 import android.annotation.TargetApi;

@@ -6,7 +6,7 @@ import android.content.Context;
 
 /**
  * 屏幕参数
- * Created by Misl on 2016/1/4.
+ * Created by yxs on 2016/1/4.
  */
 public class Resolution {
 

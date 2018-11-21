@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Ball">
+        <attr name="ball_text" format="string" />
+        <attr name="start_color" format="string" />
+        <attr name="end_color" format="string" />
+        <attr name="anim_duration" format="integer" />
+    </declare-styleable>
+
+</resources>

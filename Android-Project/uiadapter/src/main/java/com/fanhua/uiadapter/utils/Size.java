@@ -3,7 +3,7 @@ package com.fanhua.uiadapter.utils;
 import java.io.Serializable;
 
 /**
- * Created by misl on 2017/5/24.
+ * Created by yxs on 2017/5/24.
  */
 public class Size implements Serializable {
 
