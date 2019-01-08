@@ -3,6 +3,7 @@ package com.fanhua.tominiprogram;
 
 import android.content.pm.ActivityInfo;
 
+import com.baidu.mobstat.StatService;
 import com.fanhua.uiadapter.LibApplication;
 import com.fanhua.uiadapter.Resolution;
 import com.fanhua.uiadapter.http.HttpClient;
@@ -13,7 +14,9 @@ public class MyApplication extends LibApplication {
     public void onCreate() {
         super.onCreate();
         //配置服务器url
-        HttpClient.setBaseUrl("http://10.0.0.124:8081/");
+        HttpClient.setBaseUrl("http://47.105.61.82/");
+        StatService.start(this);
+        System.out.println("onCreate走了");
     }
 
     @Override

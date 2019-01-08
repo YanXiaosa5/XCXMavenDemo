@@ -1,30 +1,18 @@
 package com.fanhua.tominiprogram;
 
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.TypeEvaluator;
-import android.animation.ValueAnimator;
-import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
 
 import com.fanhua.tominiprogram.anim.SwingAnimation;
 import com.fanhua.uiadapter.ScreenUtils;
-import com.fanhua.uiadapter.utils.ViewUtils;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;

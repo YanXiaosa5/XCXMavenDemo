@@ -1,7 +1,7 @@
 package com.fanhua.tominiprogram.anim;
 
 /**
- * 摇摆动画
+ * 补间动画实现摇摆动画
  */
 import android.view.animation.Animation;
 import android.view.animation.Transformation;

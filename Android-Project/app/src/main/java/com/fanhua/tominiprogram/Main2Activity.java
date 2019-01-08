@@ -68,7 +68,7 @@ public class Main2Activity extends BaseActivity{
             String sign = SignUtil.createSign(signMap, "7908b2179af04e1099877643ad7c83a2");
             signMap.put(SIGN, sign);
 
-            HttpClient.string("api/ad/list/v2", GsonUtils.toJson(signMap), new BaseHttpListener() {
+            HttpClient.string("api/ad/list/v4", GsonUtils.toJson(signMap), new BaseHttpListener() {
                 @Override
                 public void onSucceed(String s, BaseInterceptor baseInterceptor, String s1) {
                     if(s != null){
@@ -106,6 +106,7 @@ public class Main2Activity extends BaseActivity{
         }
 
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void requestPermission() {

@@ -3,6 +3,8 @@ package com.fanhua.tominiprogram;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.fanhua.uiadapter.LibApplication;
 import com.fanhua.uiadapter.ResolutionAdapter;
@@ -21,13 +23,13 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //获取适配工具
         resolutionAdapter = ((LibApplication) getApplication()).getResolutionAdapter();
         if(isAutoAdapter()){
             resolutionAdapter.setupAll(this.getContentView(), ViewScaleType.AS_TWO_EDGES_SCALE);
         }
     }
-
 
     protected boolean isAutoAdapter(){
         return false;
