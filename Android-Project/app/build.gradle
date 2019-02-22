@@ -54,7 +54,7 @@ dependencies {
     //json转换工具
     implementation 'com.google.code.gson:gson:2.8.5'
     //
-    implementation 'com.fanhua.uiadapter:uiadapter:1.0.3'
+//    implementation 'com.fanhua.uiadapter:uiadapter:1.0.3'
     //依赖
     implementation 'com.android.support:design:28.0.0'
 

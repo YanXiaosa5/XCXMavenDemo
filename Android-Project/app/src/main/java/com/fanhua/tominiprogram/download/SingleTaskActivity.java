@@ -73,6 +73,7 @@ public class SingleTaskActivity extends AppCompatActivity {
      * @param progressBar
      */
     private void initStatus(TextView statusTv, ProgressBar progressBar) {
+
         final StatusUtil.Status status = StatusUtil.getStatus(task);
         if (status == StatusUtil.Status.COMPLETED) {
             progressBar.setProgress(progressBar.getMax());

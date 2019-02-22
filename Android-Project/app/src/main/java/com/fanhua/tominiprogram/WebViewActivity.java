@@ -116,4 +116,5 @@ public class WebViewActivity extends BaseActivity {
         }
         return pkgInfo;
     }
+
 }

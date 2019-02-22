@@ -10,10 +10,6 @@ import android.support.annotation.RequiresApi;
 import com.fanhua.tominiprogram.demo.encry.aes.AesException;
 import com.fanhua.tominiprogram.demo.encry.aes.EncryAndroid;
 import com.fanhua.tominiprogram.demo.encry.sgin.SignUtil;
-import com.fanhua.uiadapter.http.BaseInterceptor;
-import com.fanhua.uiadapter.http.GsonUtils;
-import com.fanhua.uiadapter.http.HttpClient;
-import com.fanhua.uiadapter.http.api.BaseHttpListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,45 +53,45 @@ public class Main2Activity extends BaseActivity{
         params.put("channelId", "fangyuan46");
 
         try {
-            String encryptstr = EncryAndroid.encrypt(GsonUtils.toJson(params));
+//            String encryptstr = EncryAndroid.encrypt(GsonUtils.toJson(params));
+//
+//            String timestamp = System.currentTimeMillis() + "";
+//            String echostr = createRandom(false, 32);
+//            SortedMap<String, String> signMap = new TreeMap<>();
+//            signMap.put(ECHOSTR, echostr);
+//            signMap.put(ENCRYPTSTR, encryptstr);
+//            signMap.put(TIMESTAMP, timestamp);
+//            String sign = SignUtil.createSign(signMap, "7908b2179af04e1099877643ad7c83a2");
+//            signMap.put(SIGN, sign);
 
-            String timestamp = System.currentTimeMillis() + "";
-            String echostr = createRandom(false, 32);
-            SortedMap<String, String> signMap = new TreeMap<>();
-            signMap.put(ECHOSTR, echostr);
-            signMap.put(ENCRYPTSTR, encryptstr);
-            signMap.put(TIMESTAMP, timestamp);
-            String sign = SignUtil.createSign(signMap, "7908b2179af04e1099877643ad7c83a2");
-            signMap.put(SIGN, sign);
-
-            HttpClient.string("api/ad/list/v4", GsonUtils.toJson(signMap), new BaseHttpListener() {
-                @Override
-                public void onSucceed(String s, BaseInterceptor baseInterceptor, String s1) {
-                    if(s != null){
-                        ResponseBean responseBean = GsonUtils.json2Class(s,ResponseBean.class);
-                        if(responseBean == null){
-                            return;
-                        }
-
-                        if(responseBean.getData() == null){
-                            return;
-                        }
-
-                        String resultJson = getResult(responseBean.getData().getEncryptstr());
-                        System.out.println("解密后数据"+resultJson);
-                    }
-                }
-
-                @Override
-                public void onCompleted(String s) {
-
-                }
-
-                @Override
-                public void onFailed(Throwable throwable, String s) {
-
-                }
-            }, "ad");
+//            HttpClient.string("api/ad/list/v9", GsonUtils.toJson(signMap), new BaseHttpListener() {
+//                @Override
+//                public void onSucceed(String s, BaseInterceptor baseInterceptor, String s1) {
+//                    if(s != null){
+//                        ResponseBean responseBean = GsonUtils.json2Class(s,ResponseBean.class);
+//                        if(responseBean == null){
+//                            return;
+//                        }
+//
+//                        if(responseBean.getData() == null){
+//                            return;
+//                        }
+//
+//                        String resultJson = getResult(responseBean.getData().getEncryptstr());
+//                        System.out.println("解密后数据"+resultJson);
+//                    }
+//                }
+//
+//                @Override
+//                public void onCompleted(String s) {
+//
+//                }
+//
+//                @Override
+//                public void onFailed(Throwable throwable, String s) {
+//
+//                }
+//            }, "ad");
 
         } catch (Exception e) {
             e.printStackTrace();
