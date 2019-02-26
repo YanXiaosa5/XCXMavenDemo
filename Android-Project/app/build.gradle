@@ -37,6 +37,9 @@ android {
             signingConfig signingConfigs.fanhua
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 
 }
 
@@ -54,7 +57,7 @@ dependencies {
     //json转换工具
     implementation 'com.google.code.gson:gson:2.8.5'
     //
-//    implementation 'com.fanhua.uiadapter:uiadapter:1.0.3'
+    implementation 'com.fanhua.uiadapter:uiadapter:1.0.4'
     //依赖
     implementation 'com.android.support:design:28.0.0'
 
@@ -70,7 +73,7 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
     //单元测试
-    implementation 'junit:junit:4.12'
+//    implementation 'junit:junit:4.12'
 
 
 

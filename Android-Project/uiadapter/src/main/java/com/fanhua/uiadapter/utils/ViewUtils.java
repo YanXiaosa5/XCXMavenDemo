@@ -208,10 +208,11 @@ public class ViewUtils {
 
 
     /**
-     * set view width & height
+     * 功能 设置view的宽度和高度
      *
-     * @param view
-     * @param width
+     * @param view view对象
+     * @param width 宽度
+     *              @param height 高度
      */
     public static void setViewSize(View view, float width, float height) {
         if (view == null) {

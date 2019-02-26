@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
-
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 28
 
@@ -22,11 +22,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
     /*rotrofit*/
     implementation 'com.squareup.okhttp3:okhttp:3.4.0'
     implementation 'com.squareup.retrofit2:retrofit:2.2.0'
@@ -45,4 +49,14 @@ uploadArchives {
         pom.artifactId = "uiadapter"
         pom.version = "1.0.4"
     }
+}
+//a6320da405765169ee0207afb72a97f5c55c0a33   API KEY
+publish {
+    repoName = 'uiadapter'           //bintray仓库名
+    userOrg = 'yanxiaosa'           //bintray注册的用户名
+    groupId = 'com.fanhua.uiadapter'            //compile引用时的第1部分groupId
+    artifactId = 'uiadapter'       //compile引用时的第2部分项目名
+    publishVersion = '1.0.2'       //compile引用时的第3部分版本号
+    desc = 'it is a library for android'
+    website = 'https://github.com/YanXiaosa5/XCXMavenDemo'
 }

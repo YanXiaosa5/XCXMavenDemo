@@ -134,7 +134,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传单个字符串body
+     * 上传单个字符串body
      * @see #string(String, Map, String, BaseHttpListener, String)
      */
     public static void string(String url, String singleBody, BaseHttpListener baseHttpListener, String reqTag) {
@@ -142,7 +142,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传单个字符串body
+     * 功能 上传单个字符串body
      * @see #string(String, Map, Map, String, BaseHttpListener, String)
      */
     public static void string(String url, Map params, String singleBody, BaseHttpListener baseHttpListener, String reqTag) {
@@ -150,7 +150,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传单个字符串body
+     * 功能 上传单个字符串body
      * @see #string(String, Map, Map, String, BaseHttpListener, String)
      */
     public static void string(String url, Map params, BaseHttpListener baseHttpListener, String reqTag) {
@@ -159,7 +159,7 @@ public class HttpClient {
 
 
     /**
-     * @desc 上传字符串
+     * 功能 上传字符串
      * @see #execute(String, int, Map, Map, String, Map, Map, BaseHttpListener, String)
      */
     public static void string(String url, Map header, Map params, String singleBody, BaseHttpListener baseHttpListener, String reqTag) {
@@ -167,15 +167,15 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传单文件
-     * @see #file(String, Map, String, String, BaseHttpListener, String)
+     * 功能 上传单文件
+     * @see  #file(String, Map, String, String, BaseHttpListener, String)
      */
     public static void file(String url, String key, String file, BaseHttpListener baseHttpListener, String reqTag) {
         file(url, null, key, file, baseHttpListener, reqTag);
     }
 
     /**
-     * @desc 上传单文件
+     * 功能 上传单文件
      * @see #files(String, Map, Map, BaseHttpListener, String)
      */
     public static void file(String url, Map params, String key, String file, BaseHttpListener baseHttpListener, String reqTag) {
@@ -188,7 +188,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文件
+     * 功能 上传多文件
      * @see #file(String, Map, String, String, BaseHttpListener, String)
      */
     public static void files(String url, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
@@ -196,7 +196,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文件
+     * 功能 上传多文件
      * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
      */
     public static void files(String url, Map params, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
@@ -204,7 +204,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本
+     * 功能 上传多文本
      * @see #strings(String, Map, Map, BaseHttpListener, String)
      */
     public static void strings(String url, Map<String, Object> multpartBody, BaseHttpListener baseHttpListener, String reqTag) {
@@ -212,7 +212,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本
+     * 功能 上传多文本
      * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
      */
     public static void strings(String url, Map params, Map<String, Object> multpartBody, BaseHttpListener baseHttpListener, String reqTag) {
@@ -220,7 +220,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本和文件
+     * 功能 上传多文本和文件
      * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
      */
     public static void upload(String url, String bodyKey, String body, String fileKey, String file, BaseHttpListener baseHttpListener, String reqTag) {
@@ -235,7 +235,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本和文件
+     * 功能 上传多文本和文件
      * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
      */
     public static void upload(String url, String bodyKey, List<String> bodys, String fileKey, List<String> files, BaseHttpListener baseHttpListener, String reqTag) {
@@ -250,7 +250,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本和文件
+     * 功能 上传多文本和文件
      * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
      */
     public static void upload(String url, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
@@ -258,7 +258,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本和文件
+     * 功能 上传多文本和文件
      * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
      */
     public static void upload(String url, Map params, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
@@ -266,7 +266,7 @@ public class HttpClient {
     }
 
     /**
-     * @desc 上传多文本和文件
+     * 功能 上传多文本和文件
      * @see #execute(String, int, Map, Map, String, Map, Map, BaseHttpListener, String)
      */
     public static void upload(String url, Map header, Map params, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
@@ -283,7 +283,7 @@ public class HttpClient {
      * @param multpartFiles    文件所在的Map 由key 和 Map对应.
      * @param baseHttpListener 请求返回的回调对象.
      * @param reqTag           请求tag
-     * @desc 开始执行网络请求.
+     * 功能 开始执行网络请求.
      */
     private static void execute(String url, int method, Map header, Map params, String singleBody, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
         new Builder()

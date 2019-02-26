@@ -33,6 +33,7 @@ public class IOUtils {
      * 检查file是否为目录
      *
      * @param dir 目录
+     *            @return 返回是否是目录
      */
     public static boolean isDirectory(File dir) {
         return dir != null && dir.isDirectory();
@@ -42,6 +43,7 @@ public class IOUtils {
      * 检查file是否为文件
      *
      * @param file 文件
+     *             @return 返回是否是文件类型
      */
     public static boolean isFile(File file) {
         return file != null && file.isFile();
@@ -127,7 +129,7 @@ public class IOUtils {
     /**
      * 在应用程序私有文件目录下，创建子目录
      *
-     * @param context
+     * @param context 上下文
      * @param subDirName 子目录名
      * @return 创建成功后子目录File对象，创建失败返回null
      */
@@ -138,7 +140,7 @@ public class IOUtils {
     /**
      * 在应用程序私有缓存目录下，创建子目录
      *
-     * @param context
+     * @param context  上下文
      * @param subDirName 子目录名
      * @return 创建成功后子目录File对象，创建失败返回null
      */

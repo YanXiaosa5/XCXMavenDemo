@@ -22,10 +22,6 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, name, factory, version, errorHandler);
     }
 
-    public DBHelper(Context context, String name, int version, SQLiteDatabase.OpenParams openParams) {
-        super(context, name, version, openParams);
-    }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         // 只能支持基本数据类型:varchar int long float boolean text blob clob

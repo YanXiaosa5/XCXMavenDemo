@@ -42,7 +42,7 @@ public class WebViewActivity extends BaseActivity {
         mWebSettings.setAppCacheEnabled(true);//是否使用缓存
         mWebSettings.setDomStorageEnabled(true);//开启本地DOM存储
         mWebSettings.setLoadsImagesAutomatically(true); // 加载图片
-        mWebSettings.setMediaPlaybackRequiresUserGesture(false);//播放音频，多媒体需要用户手动？设置为false为可自动播放
+//        mWebSettings.setMediaPlaybackRequiresUserGesture(false);//播放音频，多媒体需要用户手动？设置为false为可自动播放
 
         mWebview.loadUrl("https://v.6.cn");
         //设置不用系统浏览器打开,直接显示在当前Webview

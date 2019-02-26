@@ -3,13 +3,12 @@ package com.fanhua.uiadapter;
 import android.util.Log;
 
 /**
- * @desc
- *      Log统一管理类
+ * Log统一管理类
  *
- * @author misl
+ * @author yxs
  *
- * @email yxs@tele-hot.com
- * <p>
+ * yxs@tele-hot.com
+ *
  * Created by yxs on 2017/3/14.
  */
 public class L {

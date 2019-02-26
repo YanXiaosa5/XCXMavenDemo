@@ -31,7 +31,6 @@ public class ScreenUtils {
      * 设置全屏
      *
      * @param activity
-     * @return
      */
     public static void setFullScreen(Activity activity) {
         //隐藏标题栏
@@ -75,7 +74,7 @@ public class ScreenUtils {
     }
 
     /**
-     * 获得屏幕密度 <屏幕密度（0.75 / 1.0 / 1.5）>
+     * 获得屏幕密度 屏幕密度（0.75 / 1.0 / 1.5）
      *
      * @param context
      * @return
@@ -89,7 +88,7 @@ public class ScreenUtils {
     }
 
     /**
-     * 获得屏幕密度DPI <屏幕密度DPI（120 / 160 / 240）> 开发基准屏的DPI为160 以此计算字体缩放大小
+     * 获得屏幕密度DPI 屏幕密度DPI（120 / 160 / 240） 开发基准屏的DPI为160 以此计算字体缩放大小
      *
      * @param context
      * @return
