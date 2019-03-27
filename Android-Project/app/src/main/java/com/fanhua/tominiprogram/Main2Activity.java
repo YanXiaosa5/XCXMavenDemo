@@ -88,7 +88,6 @@ public class Main2Activity extends BaseActivity{
 
                 @Override
                 public void onCompleted(String s) {
-
                 }
 
                 @Override

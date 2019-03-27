@@ -47,7 +47,7 @@ uploadArchives {
         repository(url: "file:///F:/fanhua-project-android/library")
         pom.groupId = "com.fanhua.uiadapter"
         pom.artifactId = "uiadapter"
-        pom.version = "1.0.4"
+        pom.version = "1.0.5"
     }
 }
 //a6320da405765169ee0207afb72a97f5c55c0a33   API KEY
