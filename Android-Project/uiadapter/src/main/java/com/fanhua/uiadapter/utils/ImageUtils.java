@@ -44,8 +44,8 @@ public class ImageUtils {
 
     /**
      * 使用这个方法，首先你要将BitmapFactory.Options的inJustDecodeBounds属性设置为true，
-     * 解析一次图片。然后将BitmapFactory.Options连同期望的宽度和高度一起传递到到calculateInSampleSize方法中，
-     * 就可以得到合适的inSampleSize值了。之后再解析一次图片，使用新获取到的inSampleSize值，
+     * 解析一次图片。然后将 BitmapFactory.Options 连同期望的宽度和高度一起传递到到 calculateInSampleSize 方法中，
+     * 就可以得到合适的 inSampleSize 值了。之后再解析一次图片，使用新获取到的inSampleSize值，
      * 并把inJustDecodeBounds设置为false，就可以得到压缩后的图片了。
      * @param res  原始资源路径
      * @param resId  原始资源id

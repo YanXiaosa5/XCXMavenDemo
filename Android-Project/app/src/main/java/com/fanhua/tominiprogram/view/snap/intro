@@ -1,0 +1,3 @@
+实现recyclerView滑动时item进入时的整体效果
+new GravitySnapHelper(Gravity.START).attachToRecyclerView(startRecyclerView);
+https://github.com/rubensousa/RecyclerViewSnap
