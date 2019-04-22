@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.fanhua.tominiprogram.fragment.BottomMenu;
+import com.fanhua.tominiprogram.fragment.BottomMenu2;
 
 /**
  * 模仿抖音评论布局
@@ -15,11 +16,14 @@ public class BottomSheetActivity extends AppCompatActivity {
 
     BottomSheetBehavior behavior;
 
+    private BottomMenu2 bottomMenu2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_sheet);
-        View bottomSheet = findViewById(R.id.bottom_sheet);
+        final View bottomSheet = findViewById(R.id.bottom_sheet);
+        bottomMenu2 = new BottomMenu2();
         behavior = BottomSheetBehavior.from(bottomSheet);
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -36,8 +40,35 @@ public class BottomSheetActivity extends AppCompatActivity {
         findViewById(R.id.btn_bottom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new BottomMenu().show(getSupportFragmentManager(), "dialog");
+//                new BottomMenu().show(getSupportFragmentManager(), "dialog");
+                setBundle("1");
+                bottomMenu2.show(getSupportFragmentManager(), "dialog");
             }
         });
+
+        findViewById(R.id.btn_bottom2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setBundle("2");
+                bottomMenu2.show(getSupportFragmentManager(), "dialog2");
+            }
+        });
+
+        findViewById(R.id.btn_bottom3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setBundle("3");
+                bottomMenu2.show(getSupportFragmentManager(), "dialog3");
+            }
+        });
+    }
+
+    public void setBundle(String id){
+        Bundle arguments = bottomMenu2.getArguments();
+        if(arguments == null){
+            arguments = new Bundle();
+        }
+        arguments.putString("id",id);
+        bottomMenu2.setArguments(arguments);
     }
 }

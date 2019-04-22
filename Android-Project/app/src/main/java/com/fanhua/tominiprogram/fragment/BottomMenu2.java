@@ -10,6 +10,9 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,60 +20,76 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 import com.fanhua.tominiprogram.R;
 import com.fanhua.uiadapter.ScreenUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  */
-public class BottomMenu extends BottomSheetDialogFragment{
+public class BottomMenu2 extends BottomSheetDialogFragment{
     /**
      * 顶部向下偏移量
      */
     private int topOffset = 600;
     private BottomSheetBehavior<FrameLayout> behavior;
 
+    private BottomSheetDialog bottomSheetDialog;
+
+    private List<String> datas;
+
+    private BottomMenuAdapter menuAdapter;
+
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        System.out.println("BottomMenu2.onCreateDialog 创建");
         if (getContext() == null) {
             return super.onCreateDialog(savedInstanceState);
         }
-        return new BottomSheetDialog(getContext(), R.style.TransparentBottomSheetStyle);
+        return bottomSheetDialog;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View dialogView = inflater.inflate(R.layout.dialog_monitor_detail, container, false);
-        Button btn_bottom = dialogView.findViewById(R.id.btn_bottom);
-        final ScrollView scrollView = dialogView.findViewById(R.id.scrollView);
-        scrollView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                //canScrollVertically(-1)的值表示是否能向下滚动，false表示已经滚动到顶部
-
-                if(!scrollView.canScrollVertically(-1)){
-                    //scrollview不处理触摸事件
-                    scrollView.requestDisallowInterceptTouchEvent(false);
-                }else{
-                    scrollView.requestDisallowInterceptTouchEvent(true);//scrollview处理触摸事件
-                }
-                return false;
-            }
-        });
-
-        btn_bottom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (getBehavior() != null) {
-                    getBehavior().setState(BottomSheetBehavior.STATE_HIDDEN);
-                }
-            }
-        });
+        System.out.println("BottomMenu2.onCreateView");
+        View dialogView = inflater.inflate(R.layout.dialog_monitor_detail2, container, false);
         return dialogView;
+    }
+
+    public void requestData(String id){
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            if(id.equals("1")) {
+                list.add("这是第一种数据" + i);
+            } else if (id.equals("2")) {
+                list.add("这是第二种数据" + i);
+            }else{
+                list.add("这是第三种数据" + i);
+            }
+        }
+
+        menuAdapter.replaceData(list);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        RecyclerView rv_list = view.findViewById(R.id.rv_list);
+        menuAdapter = new BottomMenuAdapter(getActivity(), datas);
+        rv_list.setLayoutManager(new LinearLayoutManager(getActivity(), OrientationHelper.VERTICAL,false));
+        rv_list.setAdapter(menuAdapter);
+        String id = getArguments().getString("id");
+        System.out.println("BottomMenu2.onViewCreated"+id);
+        if(id != null){
+            requestData(id);
+        }
     }
 
     @Override
@@ -87,6 +106,17 @@ public class BottomMenu extends BottomSheetDialogFragment{
             // 初始为展开状态
             behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.TransparentBottomSheetStyle);
     }
 
     /**

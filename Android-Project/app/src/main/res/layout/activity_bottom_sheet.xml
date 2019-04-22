@@ -9,15 +9,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:behavior_hideable="true"
-        app:behavior_peekHeight="50dp"
+        android:background="@color/colorAccent"
+        app:behavior_peekHeight="100dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
-        <Button
-            android:id="@+id/btn_bottom"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="@string/app_name"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_bottom"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/app_name"
+                />
+
+            <Button
+                android:id="@+id/btn_bottom2"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/app_name" />
+
+            <Button
+                android:id="@+id/btn_bottom3"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/app_name" />
+
+        </LinearLayout>
 
 
     </android.support.v4.widget.NestedScrollView>
