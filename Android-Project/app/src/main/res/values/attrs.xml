@@ -18,4 +18,5 @@
         <attr name="txt_color" format="color"/>
     </declare-styleable>
 
+
 </resources>

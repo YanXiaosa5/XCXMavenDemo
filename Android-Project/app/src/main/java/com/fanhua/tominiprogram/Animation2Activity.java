@@ -3,9 +3,9 @@ package com.fanhua.tominiprogram;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -26,7 +26,7 @@ import com.fanhua.uiadapter.utils.ViewUtils;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Animation2Activity extends AppCompatActivity {
+public class Animation2Activity extends Activity {
 
     /**
      * 摇摆的布局

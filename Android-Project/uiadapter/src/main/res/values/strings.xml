@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UIAdapter</string>
+    <string name="recent">刚刚</string>
+    <string name="minutes_ago">&#160;分钟前</string>
+    <string name="hours_ago">&#160;小时前</string>
+    <string name="day_ago">&#160;天前</string>
+    <string name="year_ago">&#160;年前</string>
 </resources>
