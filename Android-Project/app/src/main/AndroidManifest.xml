@@ -26,7 +26,7 @@
             android:name=".contentprovider.MyContentProvider"
             android:authorities="com.fanhua.tominiprogram.contentprovider.MyContentProvider"></provider>
 
-        <activity android:name=".Animation2Activity">
+        <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

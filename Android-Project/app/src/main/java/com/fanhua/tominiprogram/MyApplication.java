@@ -1,7 +1,6 @@
 package com.fanhua.tominiprogram;
 
 
-import android.app.Application;
 import android.content.pm.ActivityInfo;
 
 import com.baidu.mobstat.StatService;
@@ -16,9 +15,8 @@ public class MyApplication extends LibApplication {
     public void onCreate() {
         super.onCreate();
         //配置服务器url
-        HttpClient.setBaseUrl("http://47.105.61.82/");
+        HttpClient.setBaseUrl("https://qxx.beijingui.cn/");
         StatService.start(this);
-        System.out.println("onCreate走了");
     }
 
     @Override
@@ -27,14 +25,4 @@ public class MyApplication extends LibApplication {
         return new Resolution(750, 1334, 1.0F, 160, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 }
-//public class MyApplication extends Application {
-//
-//    @Override
-//    public void onCreate() {
-//        super.onCreate();
-//        //配置服务器url
-//        StatService.start(this);
-//        System.out.println("onCreate走了");
-//    }
-//
-//}
+
