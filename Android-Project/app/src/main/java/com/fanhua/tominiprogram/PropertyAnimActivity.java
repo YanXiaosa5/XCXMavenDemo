@@ -12,6 +12,8 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.fanhua.tominiprogram.utils.NetPingManager;
+
 public class PropertyAnimActivity extends AppCompatActivity {
 
     LinearLayout llhidv;
@@ -30,6 +32,15 @@ public class PropertyAnimActivity extends AppCompatActivity {
         float disn = getResources().getDisplayMetrics().density;
         hidviewHeight = (int) (disn * 40 + 0.5);
         Log.e("lc---", hidviewHeight + "hidviewHeight");
+        final String doman1 = "https://qxx.beijingui.cn/api/app/upgrade/v1";
+        final String doman2 = "https://qxx.chujiejiang.top/api/app/upgrade/v1";
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+               NetPingManager.isConnByHttp(doman1);
+            }
+        }).start();
+
     }
 
     public void llClick(View view) {
@@ -42,7 +53,7 @@ public class PropertyAnimActivity extends AppCompatActivity {
         }
     }
 
-    public void demoClick(View view){
+    public void demoClick(View view) {
         selfAnim();
     }
 
@@ -94,7 +105,7 @@ public class PropertyAnimActivity extends AppCompatActivity {
     }
 
 
-    public void selfAnim(){
+    public void selfAnim() {
         btn.animate()
                 .translationY(200)
                 .setInterpolator(new OvershootInterpolator(1.f))
