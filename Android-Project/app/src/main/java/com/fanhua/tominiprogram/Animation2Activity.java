@@ -4,27 +4,19 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.fanhua.tominiprogram.anim.HiddenAnimUtils;
 import com.fanhua.tominiprogram.anim.SwingAnimation;
-import com.fanhua.uiadapter.ScreenUtils;
 import com.fanhua.uiadapter.utils.DensityUtils;
-import com.fanhua.uiadapter.utils.ViewUtils;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Animation2Activity extends Activity {
 
@@ -164,7 +156,7 @@ public class Animation2Activity extends Activity {
      */
     public void yB(){
         final HiddenAnimUtils animUtils = HiddenAnimUtils.newInstance(this, view_line, 80);
-       final ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ll_anim,
+        final ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ll_anim,
                 "rotation"
                 , 0, 30, 0.0f, -30,0.0f);
         objectAnimator.setDuration(2000);

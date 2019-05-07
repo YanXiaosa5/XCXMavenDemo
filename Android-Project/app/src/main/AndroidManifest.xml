@@ -24,9 +24,9 @@
         android:theme="@style/AppTheme">
         <provider
             android:name=".contentprovider.MyContentProvider"
-            android:authorities="com.fanhua.tominiprogram.contentprovider.MyContentProvider"></provider>
+            android:authorities="com.fanhua.tominiprogram.contentprovider.MyContentProvider" />
 
-        <activity android:name=".Main2Activity">
+        <activity android:name=".PropertyAnimActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +38,8 @@
         <activity android:name=".listdownload.BackgroundInstallActivity" />
         <!-- <activity android:name=".WebViewActivity"></activity> -->
         <activity android:name=".signature.SignActivity" />
-        <!--<activity android:name=".rxjava.RxJavaActivity"></activity>-->
+        <!-- <activity android:name=".rxjava.RxJavaActivity"></activity> -->
+        <!--<activity android:name=".PropertyAnimActivity"></activity>-->
     </application>
 
 </manifest>
