@@ -128,6 +128,7 @@ public class ScreenUtils {
      * @param activity
      * @return
      */
+    @SuppressWarnings("deprecation")
     public static Bitmap snapShotWithStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);
@@ -148,6 +149,7 @@ public class ScreenUtils {
      * @param activity
      * @return
      */
+    @SuppressWarnings("deprecation")
     public static Bitmap snapShotWithoutStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);

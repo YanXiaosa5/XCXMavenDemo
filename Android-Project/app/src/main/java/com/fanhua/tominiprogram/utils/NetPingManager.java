@@ -9,26 +9,29 @@ import java.net.URL;
  */
 public class NetPingManager {
 
-    public static boolean isConnByHttp(String host){
+    /**
+     * 是否能连接到指定地址,需要在子线程中执行
+     * @param host  地址
+     * @return 是否能连接
+     */
+    public static boolean isConnByHttp(String host) {
         boolean isConn = false;
         URL url;
         HttpURLConnection conn = null;
         try {
             url = new URL(host);//你的服务器IP
-            conn = (HttpURLConnection)url.openConnection();
-            conn.setConnectTimeout(1000*5);
-            if(conn.getResponseCode()==200){
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setConnectTimeout(1000 * 5);
+            if (conn.getResponseCode() == 200) {
                 isConn = true;
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("NetPingManager.isConnByHttp 失败");
-        }finally{
-            if(conn != null)
-            conn.disconnect();
+        } finally {
+            if (conn != null)
+                conn.disconnect();
         }
-        System.out.println("NetPingManager.isConnByHttp"+isConn);
+        System.out.println(isConn + "NetPingManager.isConnByHttp" + host);
         return isConn;
     }
-
 }

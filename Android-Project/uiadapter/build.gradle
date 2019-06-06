@@ -47,7 +47,7 @@ uploadArchives {
         repository(url: "file:///F:/fanhua-project-android/library")
         pom.groupId = "com.fanhua.uiadapter"
         pom.artifactId = "uiadapter"
-        pom.version = "1.0.5"
+        pom.version = "1.0.6"
     }
 }
 //a6320da405765169ee0207afb72a97f5c55c0a33   API KEY
@@ -56,7 +56,7 @@ publish {
     userOrg = 'yanxiaosa'           //bintray注册的用户名
     groupId = 'com.fanhua.uiadapter'            //compile引用时的第1部分groupId
     artifactId = 'uiadapter'       //compile引用时的第2部分项目名
-    publishVersion = '1.0.2'       //compile引用时的第3部分版本号
+    publishVersion = '1.0.3'       //compile引用时的第3部分版本号
     desc = 'it is a library for android'
     website = 'https://github.com/YanXiaosa5/XCXMavenDemo'
 }

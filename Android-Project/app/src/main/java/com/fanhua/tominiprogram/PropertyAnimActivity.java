@@ -3,7 +3,6 @@ package com.fanhua.tominiprogram;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.widget.LinearLayout;
 
 import com.fanhua.tominiprogram.utils.NetPingManager;
 
-public class PropertyAnimActivity extends AppCompatActivity {
+public class PropertyAnimActivity extends BaseActivity {
 
     LinearLayout llhidv;
 
@@ -38,6 +37,7 @@ public class PropertyAnimActivity extends AppCompatActivity {
             @Override
             public void run() {
                NetPingManager.isConnByHttp(doman1);
+               NetPingManager.isConnByHttp(doman2);
             }
         }).start();
 
