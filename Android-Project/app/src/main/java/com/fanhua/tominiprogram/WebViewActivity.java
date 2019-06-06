@@ -1,19 +1,15 @@
 package com.fanhua.tominiprogram;
 
-import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.fanhua.tominiprogram.ai.GsonUtils;
-import com.fanhua.tominiprogram.demo.encry.sgin.MD5Util;
 import com.fanhua.tominiprogram.signature.SignaUtils;
 
 public class WebViewActivity extends BaseActivity {

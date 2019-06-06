@@ -54,7 +54,7 @@ public class HttpClient {
     /**
      * 最开始需要设置BaseUrl
      *
-     * @param url
+     * @param url 接口地址
      */
     public static void setBaseUrl(String url) {
         baseUrl = url;
@@ -65,44 +65,29 @@ public class HttpClient {
      */
     public static Map<String, String> publicHeader = new HashMap<>();
 
-    /**
-     * 添加公共请求Header.
-     *
-     * @param key
-     * @param value
-     */
+    //添加公共请求Header.
     public static void addPublicHeader(String key, String value) {
         publicHeader.put(key, value);
     }
 
-    /**
-     * 设置公共请求Header.
-     *
-     * @param headers
-     */
+    //设置公共请求Header.
     public static void setPublicHeaders(Map<String, String> headers) {
         publicHeader = headers;
     }
 
-    /**
-     * 清空公共请求Header.
-     */
+    //清空公共请求Header.
     public static void clearPublicHeaders() {
         publicHeader.clear();
     }
 
-    /**
-     * 移除公共请求Header.
-     *
-     * @param key
-     */
+    //移除公共请求Header.
     public static void removePublicHeaders(String key) {
         publicHeader.remove(key);
     }
 
     /**
      * GET 方式请求数据.
-     *
+     * @param reqTag 请求标记
      * @param url              请求地址.
      * @param baseHttpListener 请求回调对象.
      */
@@ -112,7 +97,7 @@ public class HttpClient {
 
     /**
      * GET 方式请求数据.
-     *
+     * @param reqTag           请求标记
      * @param url              请求地址.
      * @param header           请求头.
      * @param params           请求参数.
@@ -124,7 +109,7 @@ public class HttpClient {
 
     /**
      * GET 方式请求数据.
-     *
+     * @param reqTag           请求标记
      * @param url              请求地址.
      * @param params           请求参数.
      * @param baseHttpListener 请求回调对象.
@@ -133,51 +118,38 @@ public class HttpClient {
         get(url, null, params, baseHttpListener, reqTag);
     }
 
-    /**
-     * 上传单个字符串body
-     * @see #string(String, Map, String, BaseHttpListener, String)
-     */
+    //上传单个字符串body
+    //@see #string(String, Map, String, BaseHttpListener, String)
     public static void string(String url, String singleBody, BaseHttpListener baseHttpListener, String reqTag) {
         string(url, null, singleBody, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传单个字符串body
-     * @see #string(String, Map, Map, String, BaseHttpListener, String)
-     */
+    //功能 上传单个字符串body
+    //@see #string(String, Map, Map, String, BaseHttpListener, String)
     public static void string(String url, Map params, String singleBody, BaseHttpListener baseHttpListener, String reqTag) {
         string(url, null, params, singleBody, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传单个字符串body
-     * @see #string(String, Map, Map, String, BaseHttpListener, String)
-     */
+    //功能 上传单个字符串body
+    //@see #string(String, Map, Map, String, BaseHttpListener, String)
     public static void string(String url, Map params, BaseHttpListener baseHttpListener, String reqTag) {
         string(url, params, "", baseHttpListener, reqTag);
     }
 
-
-    /**
-     * 功能 上传字符串
-     * @see #execute(String, int, Map, Map, String, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传字符串
+    //@see #execute(String, int, Map, Map, String, Map, Map, BaseHttpListener, String)
     public static void string(String url, Map header, Map params, String singleBody, BaseHttpListener baseHttpListener, String reqTag) {
         execute(url, POST, header, params, singleBody, null, null, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传单文件
-     * @see  #file(String, Map, String, String, BaseHttpListener, String)
-     */
+    //功能 上传单文件
+    //     * @see  #file(String, Map, String, String, BaseHttpListener, String)
     public static void file(String url, String key, String file, BaseHttpListener baseHttpListener, String reqTag) {
         file(url, null, key, file, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传单文件
-     * @see #files(String, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传单文件
+    //     * @see #files(String, Map, Map, BaseHttpListener, String)
     public static void file(String url, Map params, String key, String file, BaseHttpListener baseHttpListener, String reqTag) {
 
         Map<String, List<String>> multpartFiles = new HashMap<>();
@@ -187,42 +159,32 @@ public class HttpClient {
         files(url, params, multpartFiles, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文件
-     * @see #file(String, Map, String, String, BaseHttpListener, String)
-     */
+    //功能 上传多文件
+    //     * @see #file(String, Map, String, String, BaseHttpListener, String)
     public static void files(String url, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
         files(url, null, multpartFiles, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文件
-     * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文件
+    //     * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
     public static void files(String url, Map params, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
         upload(url, null, params, null, multpartFiles, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本
-     * @see #strings(String, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本
+    //     * @see #strings(String, Map, Map, BaseHttpListener, String)
     public static void strings(String url, Map<String, Object> multpartBody, BaseHttpListener baseHttpListener, String reqTag) {
         strings(url, null, multpartBody, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本
-     * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本
+    //     * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
     public static void strings(String url, Map params, Map<String, Object> multpartBody, BaseHttpListener baseHttpListener, String reqTag) {
         upload(url, null, params, multpartBody, null, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本和文件
-     * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本和文件
+    //     * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
     public static void upload(String url, String bodyKey, String body, String fileKey, String file, BaseHttpListener baseHttpListener, String reqTag) {
 
         List<String> bodys = new ArrayList<>();
@@ -234,10 +196,8 @@ public class HttpClient {
         upload(url, bodyKey, bodys, fileKey, files, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本和文件
-     * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本和文件
+    //     * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
     public static void upload(String url, String bodyKey, List<String> bodys, String fileKey, List<String> files, BaseHttpListener baseHttpListener, String reqTag) {
 
         Map<String, Object> multpartBody = new HashMap<>();
@@ -249,26 +209,20 @@ public class HttpClient {
         upload(url, null, multpartBody, multpartFiles, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本和文件
-     * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本和文件
+    //     * @see #upload(String, Map, Map, Map, BaseHttpListener, String)
     public static void upload(String url, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
         upload(url, null, multpartBody, multpartFiles, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本和文件
-     * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本和文件
+    //     * @see #upload(String, Map, Map, Map, Map, BaseHttpListener, String)
     public static void upload(String url, Map params, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
         upload(url, null, params, multpartBody, multpartFiles, baseHttpListener, reqTag);
     }
 
-    /**
-     * 功能 上传多文本和文件
-     * @see #execute(String, int, Map, Map, String, Map, Map, BaseHttpListener, String)
-     */
+    //功能 上传多文本和文件
+    //     * @see #execute(String, int, Map, Map, String, Map, Map, BaseHttpListener, String)
     public static void upload(String url, Map header, Map params, Map<String, Object> multpartBody, Map<String, List<String>> multpartFiles, BaseHttpListener baseHttpListener, String reqTag) {
         execute(url, POST, header, params, null, multpartBody, multpartFiles, baseHttpListener, reqTag);
     }
@@ -365,7 +319,7 @@ public class HttpClient {
          * Builder 构造函数.
          *
          * @param url 请求的url
-         * @return
+         * @return 当前对象
          */
         public Builder url(String url) {
             this.url = url;
@@ -376,31 +330,19 @@ public class HttpClient {
          * 请求方法.
          *
          * @param method
-         * @return
+         * @return 当前对象
          */
         public Builder method(int method) {
             this.method = method;
             return this;
         }
 
-        /**
-         * 请求Tag.
-         *
-         * @param requestTag
-         * @return
-         */
-        public Builder requestTag(String requestTag) {
+        public Builder requestTag(String requestTag) {//请求Tag.
             this.requestTag = requestTag;
             return this;
         }
 
-        /**
-         * 请求头设置.
-         *
-         * @param headers
-         * @return
-         */
-        public Builder headers(Map headers) {
+        public Builder headers(Map headers) {//请求头设置.
             if (null != headers) {
                 publicHeader.putAll(headers);
             }
@@ -412,7 +354,7 @@ public class HttpClient {
          * multipart文件对象上传结构，支持多模块和多文件上传.
          *
          * @param multpartFiles 多模块多文件
-         * @return
+         * @return 当前对象
          */
         public Builder multpartFiles(Map<String, List<String>> multpartFiles) {
             this.multpartFiles = multpartFiles;
@@ -423,7 +365,7 @@ public class HttpClient {
          * multipart对象上传结构，支持多模块上传.
          *
          * @param multpartBody 多模块
-         * @return
+         * @return 当前对象
          */
         public Builder multpartBody(Map<String, Object> multpartBody) {
             this.multpartBody = multpartBody;
@@ -433,8 +375,8 @@ public class HttpClient {
         /**
          * 上传的body对象.
          *
-         * @param singleBody
-         * @return
+         * @param singleBody 内容
+         * @return 当前对象
          */
         public Builder singleBody(String singleBody) {
             this.singleBody = singleBody;
@@ -444,8 +386,8 @@ public class HttpClient {
         /**
          * 请求参数对象.
          *
-         * @param params
-         * @return
+         * @param params 参数
+         * @return 当前对象
          */
         public Builder params(Map params) {
             this.params = params;
@@ -455,8 +397,8 @@ public class HttpClient {
         /**
          * 请求监听者.
          *
-         * @param baseHttpListener
-         * @return
+         * @param baseHttpListener 监听
+         * @return 当前对象
          */
         public Builder baseHttpListener(BaseHttpListener baseHttpListener) {
             this.baseHttpListener = baseHttpListener;
@@ -466,8 +408,8 @@ public class HttpClient {
         /**
          * 请求监听者.
          *
-         * @param subscriber
-         * @return
+         * @param subscriber 描述着
+         * @return 当前对象
          */
         public Builder subscriber(Subscriber subscriber) {
             this.subscriber = subscriber;
@@ -543,11 +485,7 @@ public class HttpClient {
             }
         }
 
-        /**
-         * 定义转换器，将订阅者和消费者绑定在一起.
-         *
-         * @return
-         */
+        //定义转换器，将订阅者和消费者绑定在一起.
         Observable.Transformer schedulersTransformer() {
             return new Observable.Transformer() {
                 @Override
@@ -559,11 +497,7 @@ public class HttpClient {
             };
         }
 
-        /**
-         * multipart 上传的方法，需要构建Multpart
-         *
-         * @return
-         */
+        //multipart 上传的方法，需要构建Multpart
         private Observable<ResponseBody> multpartUpload() {
 
             if (null == multpartFiles && multpartBody == null) return null;

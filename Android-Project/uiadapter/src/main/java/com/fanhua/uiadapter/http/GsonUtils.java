@@ -49,8 +49,8 @@ public class GsonUtils {
     /**
      * 将一个对象转化成json字符串
      *
-     * @param object
-     * @return
+     * @param object 目标对象
+     * @return 返回json
      */
     public static String toJson(Object object) {
         return getGson().toJson(object);

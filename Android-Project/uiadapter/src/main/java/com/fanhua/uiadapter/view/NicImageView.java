@@ -20,11 +20,8 @@ import com.fanhua.uiadapter.R;
 import com.fanhua.uiadapter.utils.DensityUtils;
 
 /**
- * @author :created by ysx
- * @time: 2019/6/6 14:52
- * @email: yxs@5666.com
- * @description: $des$
- * @class: NicImageView
+ * https://github.com/SheHuan/NiceImageView
+ * @author :created by ysx 2019/6/6 14:52
  **/
 public class NicImageView extends AppCompatImageView {
     private Context context;

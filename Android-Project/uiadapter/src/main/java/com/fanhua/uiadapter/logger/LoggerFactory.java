@@ -17,6 +17,7 @@ public class LoggerFactory {
      * 创建一个logger
      *
      * @param tag logger的TAG
+     *            @return log接口
      */
     public static ILogger getLogger(String tag) {
         return getNamedLogger(LoggerImpl.class, tag);
@@ -24,6 +25,7 @@ public class LoggerFactory {
 
     /**
      * 获取默认TAG的logger
+     * @return log接口
      */
     public static ILogger getDefault() {
         if (sDefaultLogger == null) {
@@ -34,6 +36,7 @@ public class LoggerFactory {
 
     /**
      * 获取默认TAG
+     * @return 默认的log
      */
     public static String getDefaultTag() {
         return sDefaultTag;
@@ -60,15 +63,14 @@ public class LoggerFactory {
 
     /**
      * 获取一个logger,TAG为tagClass.getSimpleName()
+     * @param tagClass 目标类
+     * @return log接口
      */
     public static ILogger getLogger(Class<?> tagClass) {
         return tagClass == null ? getDefault() : getLogger(tagClass.getSimpleName());
     }
 
-    /**
-     * 获取一个logger
-     */
-    public static <T extends AbstractNamedLogger> ILogger getNamedLogger(Class<T> loggerClass, Class<?> tagClass) {
+    public static <T extends AbstractNamedLogger> ILogger getNamedLogger(Class<T> loggerClass, Class<?> tagClass) {//获取一个logger
         return getNamedLogger(loggerClass, tagClass.getSimpleName());
     }
 

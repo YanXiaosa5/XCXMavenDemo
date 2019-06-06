@@ -33,13 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".wxapi.WXEntryActivity" />
-        <activity android:name=".ThreadPoolActivity" />
-        <activity android:name=".listdownload.BackgroundInstallActivity" />
-        <!-- <activity android:name=".WebViewActivity"></activity> -->
-        <activity android:name=".signature.SignActivity" />
-        <!-- <activity android:name=".rxjava.RxJavaActivity"></activity> -->
-        <!-- <activity android:name=".PropertyAnimActivity"></activity> -->
     </application>
 
 </manifest>

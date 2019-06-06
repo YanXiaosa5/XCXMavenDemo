@@ -20,9 +20,9 @@ public class ImageUtils {
 
     /**
      * 计算图片大小
-     * @param options
-     * @param reqWidth
-     * @param reqHeight
+     * @param options 配置
+     * @param reqWidth 需要的宽度
+     * @param reqHeight 需要的高度
      * @return  返回要缩放的比例值
      */
     public static int calculateInSampleSize(BitmapFactory.Options options,

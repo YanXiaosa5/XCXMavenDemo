@@ -30,7 +30,7 @@ public class ScreenUtils {
     /**
      * 设置全屏
      *
-     * @param activity
+     * @param activity 调用者页面
      */
     public static void setFullScreen(Activity activity) {
         //隐藏标题栏
@@ -48,8 +48,8 @@ public class ScreenUtils {
     /**
      * 获得屏幕宽度
      *
-     * @param context
-     * @return
+     * @param context 上下文引用
+     * @return 屏幕宽度
      */
     public static int getScreenWidth(Context context) {
         WindowManager wm = (WindowManager) context
@@ -62,8 +62,8 @@ public class ScreenUtils {
     /**
      * 获得屏幕高度
      *
-     * @param context
-     * @return
+     * @param context 上下文引用
+     * @return 屏幕高度
      */
     public static int getScreenHeight(Context context) {
         WindowManager wm = (WindowManager) context
@@ -76,8 +76,8 @@ public class ScreenUtils {
     /**
      * 获得屏幕密度 屏幕密度（0.75 / 1.0 / 1.5）
      *
-     * @param context
-     * @return
+     * @param context 上下文引用
+     * @return 屏幕像素
      */
     public static float getScreenDensity(Context context) {
         WindowManager wm = (WindowManager) context
@@ -90,8 +90,8 @@ public class ScreenUtils {
     /**
      * 获得屏幕密度DPI 屏幕密度DPI（120 / 160 / 240） 开发基准屏的DPI为160 以此计算字体缩放大小
      *
-     * @param context
-     * @return
+     * @param context 上下文引用
+     * @return 屏幕像素密度dpi
      */
     public static int getScreenDensityDpi(Context context) {
         WindowManager wm = (WindowManager) context
@@ -104,8 +104,8 @@ public class ScreenUtils {
     /**
      * 获得状态栏的高度
      *
-     * @param context
-     * @return
+     * @param context 上下文引用
+     * @return 状态栏高度
      */
     public static int getStatusHeight(Context context) {
 
@@ -125,8 +125,8 @@ public class ScreenUtils {
     /**
      * 获取当前屏幕截图，包含状态栏
      *
-     * @param activity
-     * @return
+     * @param activity 页面
+     * @return 图片
      */
     @SuppressWarnings("deprecation")
     public static Bitmap snapShotWithStatusBar(Activity activity) {
@@ -146,8 +146,8 @@ public class ScreenUtils {
     /**
      * 获取当前屏幕截图，不包含状态栏
      *
-     * @param activity
-     * @return
+     * @param activity 页面引用
+     * @return 图片
      */
     @SuppressWarnings("deprecation")
     public static Bitmap snapShotWithoutStatusBar(Activity activity) {
@@ -172,6 +172,8 @@ public class ScreenUtils {
 
     /**
      * API19以上的的设备上透明化状态栏和导航栏
+     * @param activity  页面引用
+     * @param statusColor  状态栏颜色
      */
     @TargetApi(19)
     public static void alphaStatusBarAndNavBar(Activity activity, int statusColor) {
@@ -186,6 +188,8 @@ public class ScreenUtils {
 
     /**
      * 4.4以上可以自定义状态栏和导航栏颜色
+     * @param activity  页面引用
+     * @param statusColor  状态栏颜色
      */
     private static void changeStatusNavBarColor(Activity activity, int statusColor) {
         View statusBarTintView = new View(activity);
@@ -199,19 +203,14 @@ public class ScreenUtils {
         decorView.addView(statusBarTintView);
     }
 
-    /**
-     * 返回当前屏幕方向。
-     *
-     * @param context
-     */
-    public static int getOrientation(Context context) {
+    public static int getOrientation(Context context) {//返回当前屏幕方向。
         return context.getResources().getConfiguration().orientation;
     }
 
     /**
      * 返回当前屏幕是否为竖屏。
      *
-     * @param context
+     * @param context 上下文引用
      * @return 当且仅当当前屏幕为竖屏时返回true, 否则返回false。
      */
     public static boolean isScreenOriatationPortrait(Context context) {

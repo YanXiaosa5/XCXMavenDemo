@@ -40,8 +40,8 @@ public class ResolutionAdapter implements IResolutionAdapter {
 
     /**
      * 实例化
-     *
-     * @return
+     * @throws Exception 抛出异常
+     * @return 适配接口
      */
     public static ResolutionAdapter getInstance() throws Exception {
         synchronized (ResolutionAdapter.class) {

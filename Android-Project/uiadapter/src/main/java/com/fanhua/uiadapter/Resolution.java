@@ -47,7 +47,7 @@ public class Resolution {
     /**
      * 像素密度DPI
      *
-     * @param densityDpi
+     * @param densityDpi 密度
      */
     public void setDensityDpi(int densityDpi) {
         this.densityDpi = densityDpi;
@@ -56,7 +56,7 @@ public class Resolution {
     /**
      * 设置宽度
      *
-     * @param width
+     * @param width 宽度
      */
     public void setWidth(int width) {
         this.width = width;
@@ -65,7 +65,7 @@ public class Resolution {
     /**
      * 设置高度
      *
-     * @param height
+     * @param height 高度
      */
     public void setHeight(int height) {
         this.height = height;
@@ -74,7 +74,7 @@ public class Resolution {
     /**
      * 设置像素密度
      *
-     * @param density
+     * @param density 密度比例
      */
     public void setDensity(float density) {
         this.density = density;
@@ -107,8 +107,8 @@ public class Resolution {
     /**
      * 获取屏幕参数，大小，密度和密度系数等
      *
-     * @param context
-     * @return
+     * @param context 上下文
+     * @return 适配
      */
     public static Resolution getResolution(Context context) {
 

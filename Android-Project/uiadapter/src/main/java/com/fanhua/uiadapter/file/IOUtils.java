@@ -151,7 +151,7 @@ public class IOUtils {
     /**
      * 在应用程序私有文件目录下，创建文件
      *
-     * @param context
+     * @param context 上下文
      * @param fileName 文件名
      * @return 创建成功后文件File对象，创建失败返回null
      */
@@ -166,7 +166,7 @@ public class IOUtils {
     /**
      * 在应用程序私有缓存目录下，创建文件
      *
-     * @param context
+     * @param context 上下文
      * @param fileName 文件名
      * @return 创建成功后文件File对象，创建失败返回null
      */
@@ -225,6 +225,7 @@ public class IOUtils {
      *
      * @param srcFile  源文件
      * @param destFile 目标文件
+     *                 @param overrideFile 覆盖的文件
      * @return true：拷贝成功，false：拷贝失败
      */
     public static boolean copyFile(File srcFile, File destFile, boolean overrideFile) {
@@ -339,7 +340,7 @@ public class IOUtils {
      * @param file     文件
      * @param append   是否为追加模式
      * @param mkParent 如果文件父目录不存在，是否创建
-     * @return
+     * @return 返回writer
      */
     public static Writer openFileWriter(File file, boolean append, boolean mkParent) {
         Writer result = null;
@@ -416,10 +417,7 @@ public class IOUtils {
         return result;
     }
 
-    /**
-     * 安全的关闭流
-     */
-    public static void safeClose(Closeable stream) {
+    public static void safeClose(Closeable stream) {//安全的关闭流
         if (stream != null) {
             try {
                 stream.close();

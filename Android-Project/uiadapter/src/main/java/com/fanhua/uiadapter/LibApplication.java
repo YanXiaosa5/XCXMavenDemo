@@ -46,8 +46,7 @@ public abstract class LibApplication extends Application implements IResolutionL
 
     /**
      * 分辨率适配类！
-     *
-     * @return
+     * @return 适配对象
      */
     public ResolutionAdapter getResolutionAdapter() {
         return resolutionAdapter;

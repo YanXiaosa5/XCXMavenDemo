@@ -212,6 +212,10 @@ public final class TimeUtil {
 
     /**
      * 获取与当前的时间的距离描述，比如200天前,1年前
+     * @param resources  资源
+     * @param millis     毫秒值
+     * @param isShowTime 是否显示时间
+     * @return 返回时间值
      */
     public static String getRelativeTimeWithSingleUnit(final Resources resources, final long millis,
                                                        final boolean isShowTime) {

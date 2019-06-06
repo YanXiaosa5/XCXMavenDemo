@@ -41,10 +41,9 @@ public class ViewUtils {
     }
 
     /**
-     * 23      * Returns true if view's layout direction is right-to-left.
-     * 24      *
-     * 25      * @param view the View whose layout is being considered
-     * 26
+     * * Returns true if view's layout direction is right-to-left.
+     * @param view the View whose layout is being considered
+     * @return 是否
      */
     public static boolean isLayoutRtl(View view) {
         if (Build.VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN_MR1) {
@@ -141,15 +140,15 @@ public class ViewUtils {
 
     /**
      * 获取状态栏高度单位px
+     * @param context 上下文
+     *                @return 状态栏高度px
      */
     public static int getStatusBarHeightInPx(Context context) {
         return DensityUtils.dp2px(context, getStatusBarHeightInDp(context));
     }
 
-    /**
-     * 获取状态栏高度单位像素值
-     */
-    public static int getStatusBarHeightInDp(Context context) {
+    public static int getStatusBarHeightInDp(Context context) {//获取状态栏高度单位像素值
+
         int result = -1;
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
@@ -168,10 +167,7 @@ public class ViewUtils {
         return result;
     }
 
-    /**
-     * 获取资源中的数值，没有经过转换，比如dp,sp等
-     */
-    public static int getResourceValue(Context context, int resId) {
+    public static int getResourceValue(Context context, int resId) {//获取资源中的数值，没有经过转换，比如dp,sp等
         TypedValue value = mTmpValue;
         context.getResources().getValue(resId, value, true);
         return (int) TypedValue.complexToFloat(value.data);
@@ -179,9 +175,8 @@ public class ViewUtils {
 
     /**
      * set view height
-     *
-     * @param view
-     * @param height
+     * @param view view对象
+     * @param height 高度
      */
     public static void setViewHeight(View view, int height) {
         if (view == null) {
@@ -192,12 +187,6 @@ public class ViewUtils {
         params.height = height;
     }
 
-    /**
-     * set view width
-     *
-     * @param view
-     * @param width
-     */
     public static void setViewWidth(View view, int width) {
         if (view == null) {
             return;

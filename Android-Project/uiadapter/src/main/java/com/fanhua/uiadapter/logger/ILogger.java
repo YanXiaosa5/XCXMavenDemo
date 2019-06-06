@@ -24,6 +24,7 @@ public interface ILogger {
      * 输出verbose级别的LOG
      *
      * @param msg 输出LOG的内容
+     *            @return log接口
      */
     ILogger v(String msg);
 
@@ -32,6 +33,7 @@ public interface ILogger {
      *
      * @param format 格式化字符串
      * @param args   格式化参数
+     *               @return log接口
      */
     ILogger v(String format, Object... args);
 
@@ -40,6 +42,7 @@ public interface ILogger {
      *
      * @param msg 输出LOG的内容
      * @param t   附加的异常信息
+     *            @return log接口
      */
     ILogger v(String msg, Throwable t);
 
@@ -47,6 +50,7 @@ public interface ILogger {
      * 输出verbose级别的LOG，并增加标识开始的前后缀
      *
      * @param msg 输出的LOG内容
+     *            @return log接口
      */
     ILogger traceIn(String msg);
 
@@ -54,16 +58,19 @@ public interface ILogger {
      * 输出verbose级别的LOG，并增加标识结束的前后缀
      *
      * @param msg 输出的LOG内容
+     *            @return log接口
      */
     ILogger traceOut(String msg);
 
     /**
      * 输出verbose级别的方法调用LOG
+     * @return log接口
      */
     ILogger beginMethod();
 
     /**
      * 输出verbose级别的方法调用LOG
+     * @return log接口
      */
     ILogger endMethod();
 
@@ -78,6 +85,7 @@ public interface ILogger {
      * 输出debug级别的LOG
      *
      * @param msg 输出的LOG内容
+     *            @return log接口
      */
     ILogger d(String msg);
 
@@ -86,6 +94,7 @@ public interface ILogger {
      *
      * @param format 格式化字符串
      * @param args   格式化参数
+     *               @return log接口
      */
     ILogger d(String format, Object... args);
 
@@ -94,6 +103,7 @@ public interface ILogger {
      *
      * @param msg 输出LOG的内容
      * @param t   附加的异常信息
+     *            @return log接口
      */
     ILogger d(String msg, Throwable t);
 
@@ -108,6 +118,7 @@ public interface ILogger {
      * 输出info级别的LOG
      *
      * @param msg 输出LOG的内容
+     *            @return log接口
      */
     ILogger i(String msg);
 
@@ -116,6 +127,7 @@ public interface ILogger {
      *
      * @param format 格式化字符串
      * @param args   格式化参数
+     *               @return log接口
      */
     ILogger i(String format, Object... args);
 
@@ -124,6 +136,7 @@ public interface ILogger {
      *
      * @param msg 输出LOG的内容
      * @param t   附加的异常信息
+     *            @return log接口
      */
     ILogger i(String msg, Throwable t);
 
@@ -138,6 +151,7 @@ public interface ILogger {
      * 输出warn级别的LOG
      *
      * @param msg 输出LOG的内容
+     *            @return log接口
      */
     ILogger w(String msg);
 
@@ -146,6 +160,7 @@ public interface ILogger {
      *
      * @param format 格式化字符串
      * @param args   格式化参数
+     *               @return log接口
      */
     ILogger w(String format, Object... args);
 
@@ -154,6 +169,7 @@ public interface ILogger {
      *
      * @param msg 输出LOG的内容
      * @param t   附加的异常信息
+     *            @return log接口
      */
     ILogger w(String msg, Throwable t);
 
@@ -168,6 +184,7 @@ public interface ILogger {
      * 输出error级别的Log
      *
      * @param t 异常信息
+     *          @return log接口
      */
     ILogger e(Throwable t);
 
@@ -175,6 +192,7 @@ public interface ILogger {
      * 输出error级别的LOG
      *
      * @param msg 输出LOG的内容
+     *            @return log接口
      */
     ILogger e(String msg);
 
@@ -183,6 +201,7 @@ public interface ILogger {
      *
      * @param format 格式化字符串
      * @param args   格式化参数
+     *               @return log接口
      */
     ILogger e(String format, Object... args);
 
@@ -191,11 +210,13 @@ public interface ILogger {
      *
      * @param msg 输出LOG的内容
      * @param t   附加的异常信息
+     *            @return log接口
      */
     ILogger e(String msg, Throwable t);
 
     /**
      * verbose级别输出方法调用的堆栈信息
+     * @return log接口
      */
     ILogger printStackTrace();
 
@@ -210,6 +231,7 @@ public interface ILogger {
      * 打开或关闭log功能
      *
      * @param isEnabled true打开, false关闭
+     *                  @return log接口
      */
     ILogger setEnabled(boolean isEnabled);
 
@@ -224,6 +246,7 @@ public interface ILogger {
      * 打开或关闭强制输出LOG的功能
      *
      * @param isForceLog true打开, false关闭
+     *                   @return log接口
      */
     ILogger setForceLog(boolean isForceLog);
 }

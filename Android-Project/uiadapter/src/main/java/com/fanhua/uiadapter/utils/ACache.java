@@ -205,7 +205,7 @@ public class ACache {
     /**
      * 读取 String数据
      *
-     * @param key
+     * @param key 关键字
      * @return String 数据
      */
     public String getAsString(String key) {
@@ -275,7 +275,7 @@ public class ACache {
     /**
      * 读取JSONObject数据
      *
-     * @param key
+     * @param key 关键字
      * @return JSONObject数据
      */
     public JSONObject getAsJSONObject(String key) {
@@ -324,7 +324,7 @@ public class ACache {
     /**
      * 读取JSONArray数据
      *
-     * @param key
+     * @param key 关键字
      * @return JSONArray数据
      */
     public JSONArray getAsJSONArray(String key) {
@@ -415,7 +415,7 @@ public class ACache {
     /**
      * 获取 byte 数据
      *
-     * @param key
+     * @param key 关键字
      * @return byte 数据
      */
     public byte[] getAsBinary(String key) {
@@ -501,7 +501,7 @@ public class ACache {
     /**
      * 读取 Serializable数据
      *
-     * @param key
+     * @param key 关键字
      * @return Serializable 数据
      */
     public java.lang.Object getAsObject(String key) {
@@ -568,7 +568,7 @@ public class ACache {
     /**
      * 读取 bitmap 数据
      *
-     * @param key
+     * @param key 关键字
      * @return bitmap 数据
      */
     public android.graphics.Bitmap getAsBitmap(String key) {
@@ -610,7 +610,7 @@ public class ACache {
     /**
      * 读取 Drawable 数据
      *
-     * @param key
+     * @param key 关键字
      * @return Drawable 数据
      */
     public android.graphics.drawable.Drawable getAsDrawable(String key) {
@@ -623,7 +623,7 @@ public class ACache {
     /**
      * 获取缓存文件
      *
-     * @param key
+     * @param key 关键字
      * @return value 缓存的文件
      */
     public File file(String key) {
@@ -636,7 +636,7 @@ public class ACache {
     /**
      * 移除某个key
      *
-     * @param key
+     * @param key 关键字
      * @return 是否移除成功
      */
     public boolean remove(String key) {
