@@ -58,7 +58,7 @@ public class BottomSheetActivity extends AppCompatActivity {
         findViewById(R.id.btn_bottom3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
             }
         });
     }

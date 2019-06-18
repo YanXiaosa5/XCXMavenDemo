@@ -40,11 +40,22 @@ public class QueueTaskActivity extends AppCompatActivity {
         this.controller.stop();
     }
 
+    /**
+     * 初始化下载队列
+     * @param actionView
+     * @param actionTv
+     * @param serialRb
+     * @param parallelRb
+     * @param recyclerView
+     * @param deleteActionView
+     * @param deleteActionTv
+     */
     private void initQueueActivity(final View actionView, final TextView actionTv,
                                    final AppCompatRadioButton serialRb,
                                    final AppCompatRadioButton parallelRb,
                                    RecyclerView recyclerView,
                                    final CardView deleteActionView, final View deleteActionTv) {
+
         initController(actionView, actionTv, serialRb, parallelRb,
                 deleteActionView, deleteActionTv);
         initRecyclerView(recyclerView);

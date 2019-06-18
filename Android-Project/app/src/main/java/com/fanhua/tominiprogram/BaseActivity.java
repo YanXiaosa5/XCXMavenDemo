@@ -37,7 +37,7 @@ public abstract class BaseActivity extends Activity {
             //有些情况下需要先清除透明flag
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.colorAccent));
+            window.setStatusBarColor(Color.LTGRAY);
         }
         //设置状态栏透明  end
 
@@ -55,4 +55,5 @@ public abstract class BaseActivity extends Activity {
     public View getContentView(){
         return this.findViewById(android.R.id.content);
     }
+
 }

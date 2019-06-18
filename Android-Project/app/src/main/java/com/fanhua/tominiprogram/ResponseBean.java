@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class ResponseBean implements Serializable {
 
-
     /**
      * code : 200
      * message : SUCCESS

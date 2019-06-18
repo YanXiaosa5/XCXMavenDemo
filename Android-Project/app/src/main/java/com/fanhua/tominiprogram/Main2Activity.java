@@ -70,7 +70,7 @@ public class Main2Activity extends BaseActivity implements OnBaseHttpPresenter{
                     }else{
                         if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                             //允许
-                        }else{
+                        }else{//
                             //拒绝
                         }
                     }
